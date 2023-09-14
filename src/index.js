@@ -1,6 +1,7 @@
 // import SlimSelect from 'slim-select';
 
-import { fetchBreeds, fetchCatByBreed } from './cat-api';
+import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
+import { errorHandler } from './js/error-handler'
 
 
 const loader = document.querySelector('.loader')
@@ -25,8 +26,8 @@ function onCatSelect() {
       fetchBreeds()
         .then(breeds => {
           const breedDesc = breeds.find(breed => breed.id === selectedBreedId);
-          catInfo.innerHTML = `
-          <div class="js-cat-info">
+          catInfo.innerHTML =
+          `<div class="js-cat-info">
             <img src="${img}" alt="Img" class="js-img">
             <div>
               <h1>${breedDesc.name}</h1>
