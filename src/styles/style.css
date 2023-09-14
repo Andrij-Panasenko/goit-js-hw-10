@@ -1,3 +1,16 @@
+.breed-select {
+  margin-bottom: 20px;
+}
+
+.div {
+  display: flex;
+  gap: 10px;
+}
+
+.loader-p {
+  display: inline-block;
+}
+
 .js-img {
   display: block;
   width: 600px;
@@ -22,7 +35,8 @@
   display: flex;
   gap: 20px;
 }
-/* 
+
+/* Loader */
 .loader {
   width: 48px;
   height: 48px;
@@ -55,4 +69,4 @@
   100% {
     transform: rotate(360deg);
   }
-} */
+}

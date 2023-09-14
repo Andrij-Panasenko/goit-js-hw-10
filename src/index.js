@@ -2,13 +2,21 @@ import SlimSelect from 'slim-select';
 
 import { fetchBreeds, fetchCatByBreed, errorHandler } from './cat-api';
 
+const loader = document.querySelector('.loader')
+const pageLoader = document.querySelector('.loader-p');
 const select = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
 
 select.addEventListener('change', onCatSelect);
 
+hidePageLoaderHandler();
+
 function onCatSelect() {
   const selectedBreedId = select.value;
+
+  catInfo.innerHTML = '';
+
+  showPageLoaderHandler();
 
   fetchCatByBreed(selectedBreedId)
     .then(data => {
@@ -25,6 +33,7 @@ function onCatSelect() {
               <p class="js-temperament"><span class="js-temp-head">Temperament:</span> ${breedDesc.temperament}</p>
             </div>
           </div>`;
+          hidePageLoaderHandler()
         }).catch(errorHandler);
     }).catch(errorHandler);
 }
@@ -48,3 +57,12 @@ fetchBreeds()
 
 
 
+function showPageLoaderHandler() { 
+  pageLoader.style.display = 'block';
+  loader.style.display = 'block';
+}
+
+function hidePageLoaderHandler() {
+  pageLoader.style.display = 'none';
+  loader.style.display = 'none';
+ }
