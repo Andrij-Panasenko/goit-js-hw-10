@@ -1,6 +1,7 @@
 // import SlimSelect from 'slim-select';
 
-import { fetchBreeds, fetchCatByBreed, errorHandler } from './cat-api';
+import { fetchBreeds, fetchCatByBreed } from './cat-api';
+
 
 const loader = document.querySelector('.loader')
 const pageLoader = document.querySelector('.loader-p');

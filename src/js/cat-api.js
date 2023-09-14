@@ -12,13 +12,7 @@ function fetchBreeds() {
   const url = `${BASE_URL}/breeds`
 
   return axios.get(url)
-    .then((resp) => {
-      if (resp.status !== 200) {
-        throw new Error(errorHandler);
-      }
-
-      return resp.data;
-     })
+    .then((resp) => resp.data)
 }
 
 
@@ -29,17 +23,9 @@ function fetchCatByBreed(breedId) {
   const url = `${BASE_URL}/images/search?breed_ids=${breedId}`
 
   return axios.get(url)
-    .then((resp) => {
-      if (resp.status !== 200) {
-        throw new Error(errorHandler);
-      }
-
-      return resp.data
-    })
+    .then((resp) => resp.data)
 }
 
-function errorHandler() {
-  Notiflix.Notify.failure('Requested resource is not avialable');
-}
 
-export { fetchBreeds, fetchCatByBreed, errorHandler };
+
+export { fetchBreeds, fetchCatByBreed };
