@@ -1,0 +1,24 @@
+.js-img {
+  display: block;
+  width: 600px;
+  height: auto;
+}
+
+.js-cat-descr {
+  font-size: 20px;
+  width: 500px;
+}
+
+.js-temperament {
+  font-size: 20px;
+}
+
+.js-temp-head {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.js-cat-info {
+  display: flex;
+  gap: 20px;
+}

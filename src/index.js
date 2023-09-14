@@ -16,9 +16,13 @@ function onCatSelect() {
           const breedDesc = breeds.find(breed => breed.id === selectedBreedId);
           console.log(breedDesc.description);
           catInfo.innerHTML = `
-          <div>
-            <img src="${img}" alt="Img">
-            <p>${breedDesc.description}</p>
+          <div class="js-cat-info">
+            <img src="${img}" alt="Img" class="js-img">
+            <div>
+              <h1>${breedDesc.name}</h1>
+              <p class="js-cat-descr">${breedDesc.description}</p>
+              <p class="js-temperament"><span class="js-temp-head">Temperament:</span> ${breedDesc.temperament}</p>
+            </div>
           </div>`;
         })
         .catch(err => console.log(err));
