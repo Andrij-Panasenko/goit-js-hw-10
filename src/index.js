@@ -25,10 +25,8 @@ function onCatSelect() {
               <p class="js-temperament"><span class="js-temp-head">Temperament:</span> ${breedDesc.temperament}</p>
             </div>
           </div>`;
-        })
-        .catch(errorHandler);
-    })
-    .catch(errorHandler);
+        }).catch(errorHandler);
+    }).catch(errorHandler);
 }
 
 function selectOption(breeds) {
