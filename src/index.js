@@ -3,7 +3,7 @@
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import { errorHandler } from './js/error-handler'
 
-
+const wrapper = document.querySelector('.div');
 const loader = document.querySelector('.loader')
 const pageLoader = document.querySelector('.loader-p');
 const select = document.querySelector('.breed-select');
@@ -36,8 +36,15 @@ function onCatSelect() {
             </div>
           </div>`;
           hidePageLoaderHandler()
-        }).catch(errorHandler);
-    }).catch(errorHandler);
+        })
+        .catch(() => {
+          errorHandler();
+        });
+    }).catch(() => {
+      errorHandler();
+      wrapper.classList.add('is-hidden');
+      select.classList.add('is-hidden')
+    });
 }
 
 function selectOption(breeds) {
@@ -55,7 +62,10 @@ fetchBreeds()
     const options = selectOption(breeds);
     select.innerHTML = options;
   })
-  .catch(errorHandler);
+  .catch(() => {
+    errorHandler();
+    select.classList.add('is-hidden');
+  });
 
 
 

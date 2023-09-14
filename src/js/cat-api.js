@@ -4,8 +4,6 @@ axios.defaults.headers.common['x-api-key'] =
 
   const BASE_URL = 'https://api.thecatapi.com/v1';
 
-
-
   // Breed collection
 export function fetchBreeds() {
   const url = `${BASE_URL}/breeds`
@@ -13,8 +11,6 @@ export function fetchBreeds() {
   return axios.get(url)
     .then((resp) => resp.data)
 }
-
-
 
 //info about Cat
 export function fetchCatByBreed(breedId) {

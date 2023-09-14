@@ -1,5 +1,5 @@
 import Notiflix from 'notiflix';
 
 export function errorHandler() {
-  Notiflix.Notify.failure('Requested resource is not avialable');
+  Notiflix.Notify.warning('Oops! Something went wrong! Try reloading the page!');
 }
